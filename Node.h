@@ -1,4 +1,4 @@
-/**
+/************************************************************************
  * Copyright 2013 Migael Strydom
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,13 +12,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- **/
+ ************************************************************************/
 //---------------------------------------------------------------------------
-#ifndef NodeH
-#define NodeH
+#ifndef NODE_H_
+#define NODE_H_
 //---------------------------------------------------------------------------
 #ifndef NULL
-    #define NULL 0L
+#define NULL 0L
 #endif
 //---------------------------------------------------------------------------
 class BDNode {
@@ -30,21 +30,21 @@ class BDNode {
 
   virtual ~BDNode() {
     Detach();
-    
-    while(child) {
+
+    while (child) {
       delete child;
     }
   }
 
   // Relative nodes
   BDNode *parent, *child, *previous, *next;
-  
-  bool HasChild() { 
-    return child != NULL; 
+
+  bool HasChild() {
+    return child != NULL;
   }
 
-  bool HasParent() { 
-    return parent != NULL; 
+  bool HasParent() {
+    return parent != NULL;
   }
 
   bool IsFirstChild() {
@@ -61,7 +61,7 @@ class BDNode {
       return false;
   }
 
-  //ORDER
+  // ORDER
   //                parent
   //           /        |         |
   //      3rdChild <- 2ndChild <- firstChild -> 3rdChild
@@ -88,9 +88,9 @@ class BDNode {
   void AttachInFront(BDNode *newChild) {
     if (newChild->HasParent())
       newChild->Detach();
-    
+
     newChild->parent = this;
-		
+
     if (child) {
       newChild->next = child;
       newChild->previous = child->previous;
@@ -102,13 +102,13 @@ class BDNode {
   }
 
   // Remove this node from its parent node
-  void Detach()	{
+  void Detach() {
     // check if this node is the first child
-    if(HasParent() && parent->child == this) {
-      if(next != this) {
-	parent->child = next;
+    if (HasParent() && parent->child == this) {
+      if (next != this) {
+        parent->child = next;
       } else {
-	parent->child = NULL;		
+        parent->child = NULL;
       }
     }
 
@@ -119,20 +119,20 @@ class BDNode {
     next = this;
   }
 
-  // Returns the number of nodes beneath and including this node. 
+  // Returns the number of nodes beneath and including this node.
   int NumberOfNodes() {
     int num = 1;
-    if(child) {
+    if (child) {
       num += child->next->NumberOfNodes();
     }
-    
-    if(HasParent() && !IsFirstChild()) {
+
+    if (HasParent() && !IsFirstChild()) {
       num += next->NumberOfNodes();
     }
-    
+
     return num;
   }
 };
 //---------------------------------------------------------------------------
-#endif
+#endif  // NODE_H_
 //---------------------------------------------------------------------------
