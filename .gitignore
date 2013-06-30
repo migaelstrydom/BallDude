@@ -18,6 +18,9 @@ BallDude
 *.la
 *.a
 
+# Dependencies
+.deps
+
 # IDE-specific files
 *.cbp
 *.depend
