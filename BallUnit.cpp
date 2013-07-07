@@ -236,20 +236,6 @@ void BDBall::Load() {
   gluDeleteQuadric(Sphere);
   // delete sphere;
 
-  /*pbuffer = MSOpenGL::CreatePBuffer(256, 256);
-    glBindTexture(GL_TEXTURE_2D, pbuffer->texID);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    pbuffer->Bind();
-    pbuffer->MakeCurrent();
-    glClearColor(1.0, 0.0, 1.0, 0.025);
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    MSOpenGL::MakeViewport(pbuffer->Width, pbuffer->Height);
-    wglMakeCurrent(MSOpenGL::hDC, MSOpenGL::hRC);   */
-
   bLoaded = true;
 }
 //---------------------------------------------------------------------------
@@ -266,20 +252,4 @@ void BDBall::Unload() {
   bLoaded = false;
 }
 //---------------------------------------------------------------------------
-/*void BDBall::DrawToPBuffer(float deltaTime) {
-  static float fAngle = 0.0f;
-  fAngle += 360*deltaTime;
-
-  pbuffer->MakeCurrent();
-  glClear(GL_COLOR_BUFFER_BIT);
-  glLoadIdentity();
-  glTranslatef(0.0, 0.0, -8.0);
-  glRotatef(fAngle, 0.0, 0.0, 1.0);
-  glBegin( GL_TRIANGLES );
-  glColor3f( 1.0f, 0.0f, 0.0f ); glVertex2f( 0.0f, 1.0f );
-  glColor3f( 0.0f, 1.0f, 0.0f ); glVertex2f( 0.87f, -0.5f );
-  glColor3f( 0.0f, 0.0f, 1.0f ); glVertex2f( -0.87f, -0.5f );
-  glEnd();
-  wglMakeCurrent(MSOpenGL::hDC, MSOpenGL::hRC);
-  }    */
 //---------------------------------------------------------------------------

@@ -248,7 +248,6 @@ void BDWorld::Animate(double deltaTime) {
   if (AIEngine)
     AIEngine->Update();
 
-  // BDBall::DrawToPBuffer(deltaTime);
   LandScape->Animate(deltaTime);
 
   Camera->Animate(deltaTime);
