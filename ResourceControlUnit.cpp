@@ -18,6 +18,7 @@
 #include "Texture.h"
 #include "BDError.h"
 #include <GL/gl.h>
+#include <GL/glu.h>
 //---------------------------------------------------------------------------
 BDResourceControl::BDResourceControl() {
   ResFile = new BDFile();
@@ -40,13 +41,14 @@ BDResourceControl::~BDResourceControl() {
 //---------------------------------------------------------------------------
 void BDResourceControl::Load() {
   glEnable(GL_TEXTURE_2D);
-  BDTexture texture;
 
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
   for (unsigned i = 0; i < NumTexes; i++) {
     if (UsedTexes[i]) {
+      BDTexture texture;
+
       if (!texture.LoadTexture(
               ResFile->GetDatas("Textures", i).c_str(),
               ResFile->GetDatab("TexAlpha", i)))
@@ -55,9 +57,9 @@ void BDResourceControl::Load() {
       glBindTexture(GL_TEXTURE_2D, i + texID);
 
       gluBuild2DMipmaps(GL_TEXTURE_2D,
-                        ResFile->GetDatab("TexAlpha", i) ? GL_RGBA : GL_RGB,
+                        texture.pixel_format,
                         texture.width, texture.height,
-                        ResFile->GetDatab("TexAlpha", i) ? GL_RGBA : GL_RGB,
+                        texture.pixel_format,
                         GL_UNSIGNED_BYTE,
                         texture.data);
 

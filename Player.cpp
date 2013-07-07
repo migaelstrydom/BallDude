@@ -500,8 +500,8 @@ void BDPlayer::CreateEyeTex() {
   glGenTextures(1, &EyeTexID);
   glBindTexture(GL_TEXTURE_2D, EyeTexID);
 
-  gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, EyeTex->width,
-                    EyeTex->height, GL_RGB, GL_UNSIGNED_BYTE,
+  gluBuild2DMipmaps(GL_TEXTURE_2D, EyeTex->pixel_format, EyeTex->width,
+                    EyeTex->height, EyeTex->pixel_format, GL_UNSIGNED_BYTE,
                     EyeTex->data);
 
   delete EyeTex;
