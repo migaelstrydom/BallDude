@@ -33,8 +33,7 @@ BDShadow::~BDShadow() {
   }
 }
 //---------------------------------------------------------------------------
-struct CEdgeIdx
-{
+struct CEdgeIdx {
   int a, b;
 
   CEdgeIdx(int ba, int bb) {

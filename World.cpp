@@ -279,12 +279,11 @@ void BDWorld::Draw() {
   glPushAttrib(GL_ENABLE_BIT);
   glDisable(GL_LIGHTING);
   glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_SRC_ALPHA);
   glEnable(GL_STENCIL_TEST);
   glDepthMask(GL_FALSE);
   glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
   // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
-  glColor4f(0.0,0.0,0.0, 0.5);
 
   // make drawing the shadow inc stencil buffer by 1
   glStencilFunc(GL_ALWAYS, 1, 0xFFFF);
@@ -317,6 +316,8 @@ void BDWorld::Draw() {
   glLoadIdentity();
   glStencilFunc(GL_NOTEQUAL, 0, 0xFFFF);
   glStencilOp(GL_KEEP, GL_KEEP, GL_ZERO);
+
+  glColor4f(0.0,0.0,0.0, 0.5);
 
   glBegin(GL_POLYGON);
   glVertex3f(0.0, 0.0, 0.0);
