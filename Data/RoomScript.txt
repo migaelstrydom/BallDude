@@ -1,0 +1,24 @@
+s Events=
+"NoText:EndCornerMsgPos",
+"CornerMsg:CornerMsgPos",
+"LoadGaia:LoadGaiaPos";
+
+d VEL0=0.0,2.0,0.0;
+
+s CornerMsg = 
+"msg('You are not welcome in the corner!')";
+
+d CornerMsgPos=-15.0,0.0,35.0,3.0;
+
+s NoText =
+"nomsg";
+d EndCornerMsgPos=-15.0,0.0,35.0,5.0;
+
+s LoadGaia =
+"msg('You are going back. Resistance is futile.')",
+"waitforenter",
+"loadlevel('Gaia')";
+
+d LoadGaiaPos=0.0,10.0,-25.0,1.0;
+
+!!

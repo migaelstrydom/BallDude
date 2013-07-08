@@ -1,0 +1,129 @@
+# FORMAT OF SCRIPTING:
+# The only variable that will be checked by the program is "Events".
+# The format of events is as follows:
+
+# Terms are delimited by colons
+# First term is name of script variable
+# Second term is the trigger : position and radius
+
+# In Scripts:
+# msg() - contents of variable between brackets will be displayed in text box
+# velocity() - variable between brackets is new velocity
+# position() - variable between brackets is new position
+# acceleration() - variable between brackets is new acceleration
+# camposition() - set camera pos.
+# camvelocity() - set camera vel.
+# addposition() - adds to the position
+# noinput - calls Input->Clear()
+# waitforenter - waits for the action key to be pressed
+# delay() - wait in seconds. Clear input. Velocity = 0.
+# delete - delete event from script (so that it doesn't happen again)
+# nomsg - stop message being displayed
+# loadlevel() - load the level named between the brackets
+# camposbezier() - move the camera with bezier curve between brackets. Supports 
+#  	  	   multiple control points. First double is time taken.
+# fadetomusic() - integer between brackets is the number of the music to fade to.
+#		  Streamed and module music each have own numbering.
+#		  Streamed nums start at 100 and module at 0.
+
+# Variable parameters:
+# specifying "start" as a position sets position to starting pos. of BallDude
+
+s Events=
+"CamMove:start",
+"NoMsg:POS3",
+"MSG2:POS2",
+"NoMsg:WarpNMPos",
+"WarpMsg:POS5",
+"Warp:POS4",
+"NoMsg:newpos",
+#"SWMusic:swmuspos",
+#"WaterMusic:wmuspos",
+"ToRipple:POS6",
+"NoMsg:sgnmpos",
+"StartGame:sgpos",
+"GameMSG:gmsgpos";
+
+s CamMove = 
+"camposbezier(CamMoveBezier)",
+"delay(CamMoveDelayTime)",
+"delete";
+d CamMoveBezier=2.0,
+150.0,50.0,20.0,
+75.0,20.0,20.0,
+40.0,3.0,20.0,
+30.0,4.0,60.0,
+10.0,5.0,60.0,
+3.0,5.0,32.0,
+20.0,3.0,10.0,
+58.0,8.5,18.0;
+d CamMoveDelayTime=2.0;
+
+s MSG2 = 
+"msg(MSG2TXT1)";
+s MSG2TXT1="So you want to get to the top, do you? You will have to discover
+ The Secret to get there! Here is a hint to discover The Secret:
+ The rolling rabbit gathers no moss.";
+
+d POS2=0.0,0.0,64.0,2.0;
+
+s NoMsg = 
+"nomsg";
+
+d POS3=0.0,0.0,64.0,3.0;
+
+s Warp =
+#"position(newpos)",
+"velocity(warpvel)";
+"position(newpos)";
+
+d POS4=99.0,0.0,1.0,1.0;
+d newpos=30.0,15.0,31.0,1.0;//50.0,10.0,32.0,1.0;
+d warpvel=-13.5,10.0,65.0;
+d WarpNMPos=99.0,0.0,1.0,5.0;
+
+s WarpMsg =
+"msg('Don't play with fire!')";
+d POS5=99.0,0.0,1.0,4.0;
+
+s ToRipple =
+"msg(ToRippleMSG)",
+"waitforenter",
+"loadlevel('Testing')";
+d POS6=-10.0,0.0,23.0,3.0;
+
+s ToRippleMSG="Click to go to the next area.";
+
+s WaterMusic=
+"fadetomusic(watermus)";
+
+d wmuspos=100.0,0.0,64.0,40.0;
+i watermus=1;
+
+s SWMusic=
+"fadetomusic(swmus)";
+
+d swmuspos=50.0,0.0,64.0,4.0;
+i swmus=0;
+
+s StartGame=
+"msg('Your time has started!!!!!! You have 180 seconds to get as many balls as possible through the doorway!')";
+d sgpos=0.0,0.0,0.0,1.0;
+d sgnmpos=0.0,0.0,0.0,2.0;
+
+s GameMSG=
+"msg(GameMSGMSG)",
+"waitforenter",
+"delay(KeyPressDelay)",
+"msg(GameMSGMSG2)",
+"waitforenter",
+"nomsg",
+"delete";
+
+d gmsgpos=80.0,1.0,15.0,16.0;
+d KeyPressDelay=0.1;
+
+s GameMSGMSG="These objects in front of you are what the single super-human creator of BallDude likes to call 'balls'.";
+s GameMSGMSG2="If you want to play a really cool game with these 'balls', go to the corner to the right of the doorway.";
+
+!!

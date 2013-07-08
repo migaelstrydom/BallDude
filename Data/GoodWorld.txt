@@ -1,0 +1,48 @@
+d BGColor=0.01,0.8,0.98,1.0;
+
+d AmbientLight=0.4,0.4,0.4,1.0;
+
+s BGMusic="FleetingImage.mid";
+
+b PlayMusic=true;
+
+d LightPosition=0.329983, 0.942809, 0.0471405, 0.0;
+
+b DrawFog=false;
+
+i MinTrisPerNode=60;
+
+d MinNodeSize=20.0;
+
+s Textures="grass.bmp", "Ball.bmp", "water.bmp";
+
+d Friction=0.71;
+
+d StartingPosition=0.0,19.7389,0.0;
+
+d Ball=3.0,22.7389, 0.0, 1,
+	90.0, 23.0, 25.0, 1,
+	85.0, 21.0, 25.0, 1,
+	80.0, 24.0, 25.0, 1,
+	75.0, 21.0, 25.0, 1,
+	70.0, 25.0, 25.0, 1,
+	87.5, 29.0, 20.0, 1,
+	82.5, 22.0, 20.0, 1,
+	77.5, 26.0, 20.0, 1,
+	72.5, 25.0, 20.0, 1,
+	85.0, 23.0, 15.0, 1,
+	80.0, 25.0, 15.0, 1,
+	75.0, 28.0, 15.0, 1,
+	82.5, 29.0, 10.0, 1,
+	77.5, 27.0, 10.0, 1,
+	80.0, 29.0, 5.0, 1;
+
+i NumPoints=1600;
+
+i NumTris=3042;
+
+s VertData="TestingWorld.vd";
+
+
+
+

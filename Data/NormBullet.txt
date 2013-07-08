@@ -1,0 +1,22 @@
+#NormBullet
+
+d Size=0.25;   //0.25
+d Speed=50.0; //50
+d MaxDist=200.0;  //200
+i NumBounces=2;  //2
+d Accuracy=0.0001; //Smaller = more accurate
+
+#Explosion
+i MaxNum=10;  //10
+d Force=0.0,0.0,0.0;  //0.0
+d BlastStrength=7.0; //10.0
+d ParticleSize=0.75; //0.5
+d Energy=0.5; //seconds (0.5)
+d Size=0.0; //2.5 (velocity * time) / 2
+
+#Textures
+i BulletTexture=3;
+
+i ExplosionTexture=0;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

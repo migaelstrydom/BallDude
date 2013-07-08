@@ -1,0 +1,50 @@
+# FORMAT OF SCRIPTING:
+# The only variable that will be checked by the program is "Events".
+# The format of events is as follows:
+
+# Terms are delimited by colons
+# First term is name of script variable
+# Second term is the trigger : position and radius
+
+# In Scripts:
+# msg() - contents of variable between brackets will be displayed in text box
+# velocity() - variable between brackets is new velocity
+# position() - variable between brackets is new position
+# acceleration() - variable between brackets is new acceleration
+# camposition() - set camera pos.
+# camvelocity() - set camera vel.
+# addposition() - adds to the position
+# noinput - calls Input->Clear()
+# waitforenter - waits for the action key to be pressed
+# delay() - wait in seconds. Clear input. Velocity = 0.
+# delete - delete event from script (so that it doesn't happen again)
+# nomsg - stop message being displayed
+# loadlevel() - load the level named between the brackets
+# camposbezier() - move the camera with bezier curve between brackets. Supports 
+#  	  	   multiple control points. First double is time taken.
+# fadetomusic() - integer between brackets is the number of the music to fade to.
+#		  Streamed and module music each have own numbering.
+#		  Streamed nums start at 100 and module at 0.
+
+# Variable parameters:
+# specifying "start" as a position sets position to starting pos. of BallDude
+
+s Events=;
+#"MSG:MSGPos";
+#"NoMsg:NoMSGPos",
+#="ToRipple:pos";
+
+s ToRipple="loadlevel('Ripple')";
+d pos = 5.0, 15.0, 0.0, 5.0;
+
+s MSG = 
+"msg(MSGTXT1)";
+s MSGTXT1="So you want to get to the top, do you? You will have to discover The Secret to get there! Here is a hint to discover The Secret: The rolling rabbit gathers no moss.";
+
+d MSGPos=0.0,0.0,0.0,30.0;
+
+s NoMsg="nomsg";
+
+d NoMSGPos="0.0, 0.0, 0.0, 35.0;
+
+!!

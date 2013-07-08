@@ -1,0 +1,31 @@
+s Textures="Cloud.bmp",
+	"flame.png",
+	"bubble.png",
+	"Fireball.png",
+	"Grass.bmp",
+	"ball.bmp",
+	"Water.bmp",
+	"HealthCritter.bmp",
+	"GrassPath.bmp",
+	"PondGrass.bmp";
+
+b TexAlpha=true,
+	true,
+	true,
+	true,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false;
+
+s Sounds="jump.wav",
+	"shot.wav",
+	"flatus.wav",
+	"bubble.wav";
+
+s Musics="sw.mp3",
+	"BallDude.mid";
+
+

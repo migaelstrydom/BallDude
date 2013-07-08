@@ -1,0 +1,47 @@
+#Player
+
+d WalkSpeed=15.0; //10
+d AirMoveSpeed=5.0; //5.0
+
+d FallSpeed=-30.0; //-30
+d JumpSpeed=15.0; //15.0
+
+#Sounds
+s JumpSound="jump.wav";
+s ShotSound="shot.wav";
+s FlatoSound="flatus.wav";
+s BubbleSound="bubble.wav";
+
+i JumpSound=0;
+i ShotSound=1;
+i FlatoSound=2;
+i BubbleSound=3;
+
+#Bullet
+s BulletFile="NormBullet.txt";
+
+#Animation
+
+d EyeBlinkTime=6.0; //Seconds 6.0
+d EyeBlinkLength=0.1; //0.1
+
+d BreatheTime=1.5; //1.5
+d InhaleMax=0.07; //0.07
+
+#Fart Cloud
+i FartCloudTexture=0;
+i ExCloudTexture=1;
+i BubTexture=2;
+
+i FCMaxNum=50;
+d FCForce=0.0,7.0,0.0;
+d FCPartSize=0.5;
+i FCStrength=5;
+d FCEmitInterval=0.01;//0.015
+d FCLifeTime=5.0;//5.0
+d FCKickBack=8;//10
+i ECStrength=15;
+d BubPartSize=0.25;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -1,0 +1,18 @@
+s Events=
+"CamPos:start",
+"ToMainRoom:TMRPos";
+
+s CamPos=
+"camposition(CamPos)",
+"delete";
+
+d CamPos=0.0,30.0,50.0;
+
+s ToMainRoom=
+"msg('You are going back!')",
+"waitforenter",
+"loadlevel('mainroom')";
+
+d TMRPos=50.0,0.0,50.0,20.0;
+
+!!

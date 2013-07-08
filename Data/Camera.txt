@@ -1,0 +1,17 @@
+#Camera
+d MinZVal=6.0;
+d MaxZVal=50.0;  //50
+
+d DefaultZVal=20.0;  //20.0
+
+d Speed=0.2,0.0005,15.0; //1.0, 0.005, 15.0
+
+d ZoomOutGrad=0.4;//0.4
+
+d FollowSpeed=50.0;//12.5
+
+d DispFactor=10.0;//10.0
+
+d StartingPosition=//-70.0, 47.0, 25.0;
+70.0,1.5,30.0;
+

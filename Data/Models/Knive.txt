@@ -1,0 +1,6 @@
+i NumVerts = 190;
+i NumFrames = 16;
+i NumTris = 378;
+d Extremities = 0.74521, 3, 1.0;
+# 0.74521, 3, 1.86257;
+
