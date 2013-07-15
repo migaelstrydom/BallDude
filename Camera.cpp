@@ -21,10 +21,6 @@
 #include "LoadDataUnit.h"
 
 #include <cmath>
-//TEMP:
-#include <cassert>
-#include <iostream>
-using namespace std;
 
 #define CAM_ACC     50.0
 #define CAM_DEC     7.0
